@@ -1,0 +1,499 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  overflow-x: hidden;
+  font-size: calc(60% + 0.8vmin);
+}
+
+body {
+  font-family: "Poppins";
+  margin: 0 auto;
+}
+
+.navbar {
+  background-color: #00471B;
+  padding: 8px 0;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.navbar #menu {
+  font-size: 18vw;
+  padding-right: 16px;
+  gap: 32px;
+}
+@media (max-width: 390px) {
+  .navbar {
+    padding-right: 0;
+    justify-content: center;
+  }
+}
+
+.logo {
+  padding: 12px;
+  padding-left: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo img {
+  height: 50px;
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  scale: 1.5;
+  padding-left: 16px;
+}
+@media screen and (max-width: 390px) {
+  .logo {
+    display: none;
+  }
+}
+
+nav {
+  color: #00471B;
+  background-color: #00471B;
+  z-index: 20;
+}
+nav ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 12px 0px;
+}
+nav ul a {
+  text-decoration: none;
+}
+nav ul li {
+  padding: 8px 16px;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+nav ul li:hover {
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+@media screen and (min-width: 616px) {
+  nav ul {
+    flex-direction: row;
+    justify-content: right;
+  }
+  nav ul img {
+    scale: 1.5;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins";
+}
+
+.parallax-outer {
+  background: #0F9843;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  overflow: hidden;
+  font-family: "Poppins";
+  position: relative;
+}
+.parallax-outer .image {
+  text-align: right;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.parallax-outer .parallax-text {
+  font-size: 18vw;
+  font-weight: 700;
+  position: relative;
+  color: #fafafa;
+  text-transform: uppercase;
+  font-style: italic;
+}
+.parallax-outer .parallax-text:after {
+  content: attr(text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: transparent;
+  text-transform: uppercase;
+  -webkit-text-stroke: 0.08vw #fafafa;
+  z-index: 100;
+}
+.parallax-outer img {
+  width: 100%;
+  max-width: 800px;
+  -webkit-animation: Animate 3s cubic-bezier(0.3, 1, 0.6, 1) infinite alternate;
+          animation: Animate 3s cubic-bezier(0.3, 1, 0.6, 1) infinite alternate;
+}
+@-webkit-keyframes Animate {
+  0%, 10% {
+    transform: translate(-55vw, -20vh) rotate(15deg);
+  }
+  90%, 100% {
+    transform: translate(-5vw, -20vh) rotate(-15deg);
+  }
+}
+@keyframes Animate {
+  0%, 10% {
+    transform: translate(-55vw, -20vh) rotate(15deg);
+  }
+  90%, 100% {
+    transform: translate(-5vw, -20vh) rotate(-15deg);
+  }
+}
+@media screen and (max-width: 616px) {
+  .parallax-outer .parallax-outer {
+    height: 50vh;
+    max-height: 100px;
+    width: 100%;
+  }
+  .parallax-outer .parallax-outer .parallax-text::after {
+    font-size: 100vw;
+  }
+  @-webkit-keyframes Animate {
+    0%, 10% {
+      transform: translate(0vw, -20vh) rotate(15deg);
+    }
+    90%, 100% {
+      transform: translate(-5vw, 30vh) rotate(-15deg);
+    }
+  }
+  @keyframes Animate {
+    0%, 10% {
+      transform: translate(0vw, -20vh) rotate(15deg);
+    }
+    90%, 100% {
+      transform: translate(-5vw, 30vh) rotate(-15deg);
+    }
+  }
+}
+
+.containers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  min-height: 80vh;
+  background: #ffffff;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 390px) {
+  .containers {
+    scale: 0.9;
+  }
+  .containers .container {
+    padding: 0;
+  }
+  .containers .container .imgBx {
+    padding: 0;
+  }
+}
+.containers .container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  width: auto;
+}
+.containers .container .card {
+  position: relative;
+  width: 360px;
+  height: 450px;
+  margin: 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #00471B;
+  box-shadow: 0 10px 25px #000000;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.containers .container .card .imgBx {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  transition: 0.5s ease-in-out;
+}
+.containers .container .card .imgBx:hover {
+  transform: translateY(-110px);
+}
+.containers .container .card .imgBx img {
+  max-width: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 0 20px;
+  transition: 0.5s ease-in-out;
+}
+.containers .container .card .imgBx img:hover {
+  transform: translate(-20px, -40px) rotate(-25deg) scale(1.4);
+}
+.containers .container .card .imgBx h2 {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 32px;
+}
+.containers .container .card .content {
+  position: absolute;
+  bottom: 20px;
+  padding-bottom: 16px;
+  gap: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+.containers .container .card .size {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+}
+.containers .container .card .size h3 {
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 10px;
+}
+.containers .container .card .size span {
+  width: 26px;
+  height: 26px;
+  text-align: center;
+  line-height: 24px;
+  display: inline-block;
+  color: #000000;
+  background: #ffffff;
+  border-radius: 4px;
+  font-size: 14px;
+  margin: 0 5px;
+  font-weight: 500;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.containers .container .card .size span:hover {
+  background: #0F9843;
+}
+.containers .container .card .color {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.containers .container .card .color h3 {
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 10px;
+}
+.containers .container .card .color span {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 24px;
+  display: inline-block;
+  color: #ffffff;
+  background: #ff0000;
+  border-radius: 50%;
+  font-size: 14px;
+  margin: 0 5px;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+}
+.containers .container .card .color span:nth-child(2) {
+  background: green;
+}
+.containers .container .card .color span:nth-child(3) {
+  background: blue;
+}
+.containers .container .card .color span:nth-child(4) {
+  background: red;
+}
+.containers .container .card a {
+  position: relative;
+  top: 10px;
+  display: inline-block;
+  padding: 12px 30px;
+  background: #0F9843;
+  border-radius: 40px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.container .card:hover .content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.producttitle {
+  font-size: 48px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  padding: 32px;
+  padding-bottom: 0;
+  margin-top: 64px;
+  color: #00471B;
+}
+
+.cardboxes {
+  padding-top: 32px;
+  padding: 64px 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+}
+
+.cardbox {
+  background-color: #00471B;
+  width: 500px;
+  height: auto;
+}
+.cardbox img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding-top: 16px;
+}
+.cardbox .cardbox-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cardbox .cardbox-body h5 {
+  font-size: 32px;
+  font-weight: 700;
+  padding: 16px;
+  padding-bottom: 0px;
+  color: #ffffff;
+}
+.cardbox .cardbox-body h4 {
+  font-size: 20px;
+  font-weight: 400;
+  padding: 16px;
+  padding-top: 8px;
+  padding-bottom: 32px;
+  color: #ffffff;
+}
+.cardbox .cardbox-body a {
+  width: 35%;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 120px;
+  margin-bottom: 32px;
+  background-color: #0F9843;
+  border: 0px;
+  border-radius: 10px;
+}
+.cardbox .cardbox-body a:hover {
+  background-color: #ffffff;
+  color: #0F9843;
+  font-weight: 700;
+}
+
+.footer {
+  background-color: #000000;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+  padding: 32px;
+}
+.footer h1 {
+  font-weight: 600;
+  font-size: 24px;
+  padding-bottom: 24px;
+}
+.footer .footerlogo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 16px;
+}
+.footer .footerlogo img {
+  height: 32px;
+  aspect-ratio: 3/2;
+  -o-object-fit: contain;
+     object-fit: contain;
+}/*# sourceMappingURL=main2.css.map */
